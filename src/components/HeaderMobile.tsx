@@ -4,6 +4,8 @@ import iconMenu from "../images/icon-menu.svg";
 import iconClose from "../images/icon-close.svg";
 import { useNavigate } from "react-router";
 import {trueOfFalse} from '../store/trueAndFalse'
+import { motion } from "framer-motion";
+
 
 
 export const HeaderMobile = () => {
@@ -26,7 +28,12 @@ export const HeaderMobile = () => {
 
   return (
     <>
-      <header className="flex flex-row justify-between items-center px-6 border-b border-gray-300 bg-[#F1F5F9] h-[65px] relative">
+      <motion.header
+      initial={{ y: -20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className="flex flex-row justify-between items-center px-6 border-b border-gray-300 bg-[#F1F5F9] h-[65px] relative">
         <img className="h-8" src={logoCar} alt="logo" />
 
         <button onClick={toggleMenu}>
@@ -34,7 +41,7 @@ export const HeaderMobile = () => {
 
           <img className={`h-[15px] cursor-pointer ${open ? "block" : "hidden"}`} src={iconClose} />
         </button>
-      </header>
+      </motion.header>
 
       <div
         className={`absolute top-[65px] left-0 w-full h-[calc(100vh-65px)] bg-[#F1F5F9] p-4 z-10 transition-all duration-500 ease-in-out

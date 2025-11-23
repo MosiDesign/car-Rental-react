@@ -3,6 +3,7 @@ import logoCar from "../images/logo-car.svg";
 import iconSearch from "../images/icon-search.svg"
 import { Navigate, useNavigate } from 'react-router';
 import {trueOfFalse} from '../store/trueAndFalse'
+import { motion } from "framer-motion";
 
 
 
@@ -12,7 +13,12 @@ function HeaderDesktop() {
     const {openLogin, setOpenLogin} = trueOfFalse();
     
   return (
-    <header className="flex flex-row justify-between items-center px-32 border-b border-gray-300 bg-[#F1F5F9] h-[73px] ">
+    <motion.header 
+    initial={{ y: -20, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.3, ease: "easeOut" }}
+    className="flex flex-row justify-between items-center px-32 border-b border-gray-300 bg-[#F1F5F9] h-[73px] ">
         <img className="h-8" src={logoCar} alt="logo" />
         <div className='flex flex-row items-center gap-5'>
             <ul className="flex flex-row items-center gap-7 *:cursor-pointer">
@@ -35,7 +41,7 @@ function HeaderDesktop() {
               Login
             </button>
         </div>
-    </header>
+    </motion.header>
   )
 }
 

@@ -4,6 +4,10 @@ import HeaderDesktop from "../components/HeaderDesktop";
 import Login from "../components/Login";
 import LuxuryCarsOnRent from "../components/LuxuryCarsOnRent";
 import FeaturedVehicles from "../components/FeaturedVehicles";
+import DoyouOwnCar from "../components/DoyouOwnCar";
+import Costomers from "../components/costomers";
+import Input from "../components/input";
+import Footer from "../components/footer";
 
 export const Home = () => {
   return (
@@ -13,6 +17,10 @@ export const Home = () => {
         <Login />
         <LuxuryCarsOnRent />
         <FeaturedVehicles />
+        <DoyouOwnCar />
+        <Costomers />
+        <Input />
+        <Footer />
       </div>
 
       <div className="block md:hidden">
@@ -20,6 +28,10 @@ export const Home = () => {
         <Login />
         <LuxuryCarsOnRent />
         <FeaturedVehicles />
+        <DoyouOwnCar />
+        <Costomers />
+        <Input />
+        <Footer />
       </div>
     </>
   );
