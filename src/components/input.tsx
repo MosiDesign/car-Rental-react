@@ -1,10 +1,8 @@
 import React, { useState, FormEvent } from 'react';
 
-// اینترفیس برای تعریف تایپ‌های مربوط به کامپوننت (اختیاری اما توصیه شده)
 interface NewsletterProps {}
 
 const Input: React.FC<NewsletterProps> = () => {
-  // مدیریت وضعیت برای فیلد ایمیل
   const [email, setEmail] = useState('');
 
   const handleSubmit = (e: FormEvent) => {

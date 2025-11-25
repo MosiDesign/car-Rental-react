@@ -28,7 +28,6 @@ type postsType = {
   _id: string;
 };
 
-// دریافت search از طریق props
 const FeaturedVehicles_Cars = ({ search }: { search: string }) => {
   const [cars, setCars] = useState<postsType[]>([]);
   const navigate = useNavigate();
@@ -45,7 +44,6 @@ const FeaturedVehicles_Cars = ({ search }: { search: string }) => {
     getCars();
   }, []);
 
-  // فیلتر کردن ماشین‌ها بر اساس props search
   const filteredCars = cars.filter((item) => {
     if (search === "") return true;
     return (
@@ -76,7 +74,6 @@ const FeaturedVehicles_Cars = ({ search }: { search: string }) => {
             onClick={() => navigate(`/cars/${item._id}`)}
             className="flex flex-col cursor-pointer overflow-hidden rounded-2xl shadow-xl group bg-white h-full justify-between"
           >
-             {/* ... محتویات کارت ماشین (تصویر و متن) همان کد قبلی ... */}
             <div className="relative">
               <img src={item.image} alt={item.brand} className="w-full h-[197px] object-cover rounded-t-2xl group-hover:scale-105 duration-300" />
               <p className={clsx("absolute top-4 left-4 px-2 py-1 rounded-2xl text-white text-[12px]", item.isAvaliable ? "bg-[#2563ebe6]" : "bg-[#fb2c36]")}>

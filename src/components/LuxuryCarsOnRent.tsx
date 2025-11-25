@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 
 
 function LuxuryCarsOnRent() {
-  // استیت برای ذخیره شهر انتخاب شده
   const [location, setLocation] = useState("");
 
   return (
